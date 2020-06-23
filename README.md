@@ -1,6 +1,8 @@
 # cloud-platform-terraform-kiam
 
-[![Releases](https://img.shields.io/github/release/ministryofjustice/cloud-platform-terraform-template/all.svg?style=flat-square)](https://github.com/ministryofjustice/cloud-platform-terraform-kiam/releases)
+<a href="https://github.com/ministryofjustice/cloud-platform-terraform-kiam/releases">
+  <img src="https://img.shields.io/github/release/ministryofjustice/cloud-platform-terraform-kiam/all.svg" alt="Releases" />
+</a>
 
 Terraform module that deploy cloud-platform kiam, which runs as an agent on each node in your Kubernetes cluster and allows cluster users to associate IAM roles to Pods.
 
