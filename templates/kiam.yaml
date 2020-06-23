@@ -1,0 +1,87 @@
+extraArgs: {}
+
+agent:
+  image:
+    tag: ${ kiam_version }
+
+  gatewayTimeoutCreation: 5000ms
+
+  tolerations:
+    - key: "monitoring-node"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
+
+  ## Host networking settings
+  ##
+  host:
+    iptables: true
+    port: 8181
+    interface: cali+
+
+  tlsCerts:
+    certFileName: cert
+    keyFileName: key
+    caFileName: ca
+
+  ## Prometheus metrics
+  ##
+  prometheus:
+    scrape: true
+    port: 9620
+    syncInterval: 5s
+    servicemonitor:
+      enabled: true
+      path: /metrics
+      interval: 10s
+      labels: {}
+
+  ## Additional container hostPath mounts
+  ##
+  extraHostPathMounts:
+  - name: ssl-certs
+    mountPath: /etc/ssl/certs
+    hostPath: /usr/share/ca-certificates/mozilla
+    readOnly: true
+
+server:
+  useHostNetwork: true
+
+  image:
+    tag: ${ kiam_version }
+
+  probes:
+    serverAddress: 127.0.0.1
+
+  gatewayTimeoutCreation: 500ms
+
+  ## Pod tolerations
+  ## Ref https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+  ##
+  tolerations:
+    - key: "monitoring-node"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
+
+  tlsCerts:
+    certFileName: cert
+    keyFileName: key
+    caFileName: ca
+
+  ## Location of SSL certs on host
+  ##
+  sslCertHostPath: /usr/share/ca-certificates/mozilla
+
+  ## Prometheus metrics
+  ##
+  prometheus:
+    scrape: true
+    port: 9620
+    syncInterval: 5s
+    servicemonitor:
+      enabled: true
+      path: /metrics
+      interval: 10s
+      labels: {}
+
