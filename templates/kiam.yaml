@@ -1,4 +1,7 @@
 extraArgs: {}
+psp:
+  # Specifies whether PodSecurityPolicies should be created
+  create: true
 
 agent:
   image:
