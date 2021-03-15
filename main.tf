@@ -30,16 +30,10 @@ resource "null_resource" "kube_system_kiam_annotation" {
   }
 }
 
-data "helm_repository" "uswitch" {
-  name = "uswitch"
-  url  = "https://uswitch.github.io/kiam-helm-charts/charts"
-}
-
-
 resource "helm_release" "kiam" {
   name          = "kiam"
   chart         = "kiam"
-  repository    = data.helm_repository.uswitch.metadata[0].name
+  repository    = "https://uswitch.github.io/kiam-helm-charts/charts"
   namespace     = kubernetes_namespace.kiam.id
   recreate_pods = "true"
   version       = "5.8.1"
