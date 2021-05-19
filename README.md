@@ -18,15 +18,10 @@ module "kiam" {
 }
 
 ```
-## Inputs
 
-_Describe what to pass the module_
-_example_:
+<!--- BEGIN_TF_DOCS --->
 
-| Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| dependence_prometheus               |  Prometheus Dependence variable  | string | | yes |
-| dependence_opa        | OPA Dependence variable                | string   |         | yes |
+<!--- END_TF_DOCS --->
 
 ## Reading Material
 

@@ -41,9 +41,4 @@ resource "helm_release" "kiam" {
   values = [templatefile("${path.module}/templates/kiam.yaml", {
     kiam_version = "v3.5"
   })]
-
-  depends_on = [
-    var.dependence_prometheus,
-    var.dependence_opa
-  ]
 }
