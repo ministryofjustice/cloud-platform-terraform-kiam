@@ -20,6 +20,44 @@ module "kiam" {
 ```
 
 <!--- BEGIN_TF_DOCS --->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.13 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| helm | n/a |
+| kubernetes | n/a |
+| null | n/a |
+
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [helm_release](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) |
+| [kubernetes_namespace](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) |
+| [null_resource](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| dependence\_opa | OPA module dependences in order to be executed. | `any` | n/a | yes |
+| dependence\_prometheus | Prometheus module dependences in order to be executed. | `any` | n/a | yes |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| helm\_kiam\_status | n/a |
 
 <!--- END_TF_DOCS --->
 
