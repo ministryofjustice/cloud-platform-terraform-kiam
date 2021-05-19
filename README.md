@@ -48,10 +48,7 @@ No Modules.
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| dependence\_opa | OPA module dependences in order to be executed. | `any` | n/a | yes |
-| dependence\_prometheus | Prometheus module dependences in order to be executed. | `any` | n/a | yes |
+No input.
 
 ## Outputs
 
