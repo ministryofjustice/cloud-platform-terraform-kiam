@@ -6,6 +6,7 @@
 
 Terraform module that deploy cloud-platform kiam, which runs as an agent on each node in your Kubernetes cluster and allows cluster users to associate IAM roles to Pods.
 
+
 ## Usage
 
 ```hcl
@@ -31,3 +32,8 @@ _example_:
 ## Reading Material
 
 Click [here](https://github.com/uswitch/kiam#overview) for the official kiam documentation.
+
+
+## Note
+
+"live-1-kiam" branch for kops cluster. The "main" branch stores the releases for EKS, and the "live-1-kiam" serves as a kops cluster features branch, which was used for "live-1" cluster.
